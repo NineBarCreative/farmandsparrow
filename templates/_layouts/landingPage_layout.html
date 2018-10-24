@@ -1,0 +1,26 @@
+{% extends "_layouts/base_layout" %}
+
+
+{% if bodyClass is not defined %}
+	{% set bodyClass = entry is defined ? entry.section.handle : craft.request.firstSegment %}
+{% endif %}
+
+{% if nav[bodyClass] is defined %}
+	{% set title %}{% if title is defined %}{{ title }} - {% endif %}{{ nav[bodyClass].title }}{% endset %}
+{% endif %}
+
+{% block body %}
+<header id="header">
+</header>
+
+<nav id="navigation">
+</nav>
+
+<main id="main">
+  {% include "_partials/landingPage/blocks/landingPage_main" %}
+  {% block main %}{% endblock %}
+</main>
+
+<footer id="footer">
+</footer>
+{% endblock %}
