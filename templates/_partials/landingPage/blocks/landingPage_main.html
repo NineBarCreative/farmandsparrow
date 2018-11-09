@@ -3,12 +3,12 @@
 {% set logo = entry.logo.one() %}
 <div id="contentContainer" class="w-screen min-h-screen bg-cover bg-center flex justify-center flex-col bg-black" style="background-image: url('{{ backgroundImage.getUrl }}')">
   <div id="landingPageContent" class="container mx-auto md:w-2/3 flex md:flex-row flex-col w-full">
-    <img src="{{ logo.getUrl }}" id="logo" class="md:w-1/4 w-2/3 h-full mx-auto" />
+    <img src="{{ logo.getUrl }}" id="logo" class="md:w-1/4 w-2/3 h-full mx-auto pb-5 pt-3" />
     <div id="landingPageStatement" class="md:w-3/4 p-5 text-left font-imfell">
       <p>{{ entry.landingPageStatement }}</p>
     </div>
   </div>
-  <div id="landingPageLinks" class="container mx-auto md:w-2/3 p-5 border-t border-b border-black flex flex-col justify-center md:h-1/4 font-imfell text-center">
+  <div id="landingPageLinks" class="container mx-auto md:w-2/3 p-5 border-t border-b border-black flex flex-col justify-center md:h-1/4 font-imfell text-center text-black no-underline">
     {{ entry.landingPageLinks }}
   </div>
 </div>
