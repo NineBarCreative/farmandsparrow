@@ -6,10 +6,44 @@
     <img src="{{ logo.getUrl }}" id="logo" class="md:w-1/4 w-2/3 h-full mx-auto pb-5 pt-3" />
     <div id="landingPageStatement" class="md:w-3/4 p-5 text-left font-imfell">
       <p>{{ entry.landingPageStatement }}</p>
+      <div id="landingPageLinks" class="p-5 mt-5 border-t border-b border-black flex flex-col justify-center md:h-1/4 font-imfell text-center text-black no-underline">
+        {{ entry.landingPageLinks }}
+      </div>
+      <!--<a data-fancybox data-src="#hidden-content" href="javascript:;">
+        Get in Touch!
+      </a>
+      <div style="display: none;" id="hidden-content">
+        {% macro errorList(errors) %}
+        {% if errors %}
+        <ul class="errors">
+          {% for error in errors %}
+          <li>{{ error }}</li>
+          {% endfor %}
+        </ul>
+        {% endif %}
+        {% endmacro %}
+        {% from _self import errorList %}
+
+        {% set form = wheelform.form({
+        id: 1,
+        attributes: [
+        'novalidate="novalidate"'
+        ],
+        buttonLabel: "Submit",
+        }) %}
+
+        {{ form.open() }}
+        {{ errors['form'] is defined ? errorList(errors['form']) }}
+        {{ errors['recaptcha'] is defined ? errorList(errors['recaptcha']) }}
+        {{ errors['honeypot'] is defined ? errorList(errors['honeypot']) }}
+
+        {% for field in form.fields %}
+        {{ field.render() }}
+        {{ errors[field.name] is defined ? errorList(errors[field.name]) }}
+        {% endfor %}
+        {{ form.close() }}
+      </div>-->
     </div>
-  </div>
-  <div id="landingPageLinks" class="container mx-auto md:w-2/3 p-5 border-t border-b border-black flex flex-col justify-center md:h-1/4 font-imfell text-center text-black no-underline">
-    {{ entry.landingPageLinks }}
   </div>
 </div>
 {% endblock %}
